@@ -12,6 +12,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var statusLabel: UILabel!
     
+    @IBOutlet weak var reverseLabel: UILabel!
+    
     @IBAction func buttonPressed(_ sender: UIButton) {
         let title = sender.title(for: .selected)!
         let text = "\(title) button pressed"
@@ -23,6 +25,11 @@ class ViewController: UIViewController {
         let nameRange = (text as NSString).range(of: title)
         styledText.setAttributes(attributes, range: nameRange)
         statusLabel.attributedText = styledText
+    }
+    @IBAction func reversePressed(_ sender: UIButton) {
+        let reverseTitle = sender.title(for: .selected)!
+        let reverseText = "\(reverseTitle) is on"
+        reverseLabel.text = reverseText
     }
 }
 
